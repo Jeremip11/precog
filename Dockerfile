@@ -5,7 +5,5 @@ RUN apt-get install -y python-pip python-dev build-essential curl
 COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
-# this doesn't seem to do anything
-EXPOSE 5000
-ENTRYPOINT ["python"]
-CMD ["make-it-so.py"]
+ENTRYPOINT ["gunicorn", "make-it-so:app"]
+CMD ["--bind=0.0.0.0:8000", "--log-config", "logging.conf"]]

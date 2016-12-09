@@ -9,3 +9,4 @@ dateutils==0.6.6
 uritemplate==0.6
 Flask-SSLify==0.1.5
 raven==5.24.3
+json-logging-py==0.2
