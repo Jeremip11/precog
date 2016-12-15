@@ -36,9 +36,9 @@ webhook_config = parse_webhook_config(*[val for (key, val) in environ.items()
                                         or key == 'WEBHOOK_CONFIG'])
 
 app = Flask(__name__)
-if sys.argv[0] != 'test.py':
-    getLogger('precog').info('SSLifying')
-    SSLify(app)
+# if sys.argv[0] != 'test.py':
+#     getLogger('precog').info('SSLifying')
+#     SSLify(app)
 app.secret_key = flask_secret_key
 app.jinja_env.filters['nice_relative_time'] = nice_relative_time
 app.config['HOOK_SECRETS_TOKENS'] = webhook_config
