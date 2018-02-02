@@ -156,7 +156,7 @@ def find_base_path(owner, repo, ref, GET):
     
     paths = {item['path']: item['url'] for item in tree_resp.json()['tree']}
     
-    if 'circle.yml' not in paths:
+    if '.circle/config.yml' not in paths:
         return '$CIRCLE_ARTIFACTS'
     
     blob_url = paths['.circle/config.yml']
