@@ -156,17 +156,17 @@ def find_base_path(owner, repo, ref, GET):
     
     paths = {item['path']: item['url'] for item in tree_resp.json()['tree']}
     
-    if 'circle.yml' not in paths:
+    if '.circle/config.yml' not in paths:
         return '$CIRCLE_ARTIFACTS'
     
-    blob_url = paths['circle.yml']
+    blob_url = paths['.circle/config.yml']
     blob_resp = GET(blob_url, _LONGTIME)
     blob_yaml = b64decode(blob_resp.json()['content']).decode('utf8')
     
     try:
         circle_config = yaml.load(blob_yaml)
     except yaml.reader.ReaderError as err:
-        raise RuntimeError('Problem reading configuration from circle.yml: {}'.format(err))
+        raise RuntimeError('Problem reading configuration from circle: {}'.format(err))
     
     paths = circle_config.get('general', {}).get('artifacts', [])
     
