@@ -35,7 +35,7 @@ _GITHUB_COMMIT_URL = 'https://api.github.com/repos/{owner}/{repo}/commits/{sha}'
 _GITHUB_TREE_URL = 'https://api.github.com/repos/{owner}/{repo}/git/trees/{ref}'
 _GITHUB_HEADS_URL = 'https://api.github.com/repos/{owner}/{repo}/git/refs/heads'
 _GITHUB_STATUS_URL = 'https://api.github.com/repos/{owner}/{repo}/statuses/{ref}'
-_CIRCLECI_ARTIFACTS_URL = 'https://circleci.com/api/v1/project/{build}/artifacts?circle-token={token}'
+_CIRCLECI_ARTIFACTS_URL = 'https://circleci.com/api/v1.1/project/{build}/artifacts?circle-token={token}'
 
 _LONGTIME = 3600
 _defaultcache = {}
