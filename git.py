@@ -304,9 +304,9 @@ def select_path(paths, path):
         return path
     
     if path == '':
-        return 'index.html'
+        return '../home/circleci/project/_precog_site/index.html'
 
-    return '{}/index.html'.format(path.rstrip('/'))
+    return '../home/circleci/project/_precog_site/{}/index.html'.format(path.rstrip('/'))
 
 def skip_webhook_payload(payload):
     ''' Return True if this payload should not be processed.
